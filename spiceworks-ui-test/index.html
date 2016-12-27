@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="css/application.css" rel="stylesheet">
+    <script src="js/vendor/jquery.min.js" type="text/javascript"></script>
+    <script src="js/vendor/underscore.js" type="text/javascript"></script>
+    <script src="js/application.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+</head>
+
+<body>
+
+    <div id="main-content">
+        <!-- The page width is 817px -->
+        <!-- Example of using the form CSS to help you out. -->
+        <form>
+            <div>
+                <label>Full Name</label>
+                <input name="name" type="text" required />
+            </div>
+            <div>
+                <label>Photo URL</label>
+                <input name="photo_url" />
+            </div>
+            <button type="submit">Create</button>
+        </form>
+
+        <hr />
+
+        <!-- Employee list goes here. There is initial data for you in application.js -->
+        <div id="imgCard">
+        </div>
+        <script>
+            var data = [{
+                name: "Mark-Paul Gosselaar",
+                photo_url: ""
+            }, {
+                name: "Delta Burke",
+                photo_url: "img/avatars/delta.png"
+            }, {
+                name: "Alf",
+                photo_url: "img/avatars/alf.png"
+            }, {
+                name: "Jaleel White",
+                photo_url: "img/avatars/jaleel.png"
+            }, {
+                name: "Ralph Macchio",
+                photo_url: "img/avatars/ralph.png"
+            }, {
+                name: "Candace Cameron",
+                photo_url: "img/avatars/candace.png"
+            }, {
+                name: "Patrick Duffy",
+                photo_url: "img/avatars/pduff.png"
+            }, {
+                name: "Arnold Schwartzengger",
+                photo_url: "img/avatars/arnold.png"
+            }];
+            function display() {
+                for (var i = 0; i < data.length; i++) {
+                  console.log(data[i]);
+                  $("#imgCard").prepend('<div class="card">' + data[i].name + '</div>');
+                  $(".card").prepend('<img src=' + data[i].photo_url + '>');
+                }
+            }
+            display();
+        </script>
+    </div>
+</body>
+
+</html>
