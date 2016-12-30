@@ -79,8 +79,10 @@
 
             $(document).ready(function() {
                 $(".card").hover(function() {
-                    $(".hoverX").html('<div class="hover">' + '<img src=' + 'img/close.png' + '>' + '</div>');
-                    return false;
+                    // console.log("hover");
+                    $(".nameText").append('<img class="hover" src=' + 'img/close.png' + '>');
+                }, function() {
+                    $(".nameText").append("");
                 });
             });
         </script>

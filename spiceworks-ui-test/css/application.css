@@ -8,7 +8,7 @@ body {
 }
 
 #main-content {
-    width: 817px;
+    width: 75%;
     padding: 25px;
     margin: 30px auto;
     border: 1px solid #d3d3d3;
@@ -84,4 +84,12 @@ img {
     float: left;
     border-right: solid 1px #9a9a9a;
     padding: 5px;
+}
+
+.hover {
+    width: 10px;
+    height: 10px;
+    border: none;
+    position: absolute;
+    right: 0;
 }
