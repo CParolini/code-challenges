@@ -10,31 +10,27 @@
 </head>
 
 <body>
-
     <div id="main-content">
         <!-- The page width is 817px -->
         <!-- Example of using the form CSS to help you out. -->
         <form>
             <div>
                 <label>Full Name</label>
-                <input name="name" type="text" required />
+                <input id="name" name="name" type="text" required />
             </div>
             <div>
                 <label>Photo URL</label>
-                <input name="photo_url" />
+                <input id="photo" name="photo_url" />
             </div>
             <button type="submit">Create</button>
         </form>
 
         <hr />
-
         <!-- Employee list goes here. There is initial data for you in application.js -->
-        <div id="imgCard">
-        </div>
         <script>
-            var data = [{
+            data = [{
                 name: "Mark-Paul Gosselaar",
-                photo_url: ""
+                photo_url: "img/default.png"
             }, {
                 name: "Delta Burke",
                 photo_url: "img/avatars/delta.png"
@@ -57,13 +53,27 @@
                 name: "Arnold Schwartzengger",
                 photo_url: "img/avatars/arnold.png"
             }];
+
             function display() {
-                for (var i = 0; i < data.length; i++) {
-                  console.log(data[i]);
-                  $("#imgCard").prepend('<div class="card">' + data[i].name + '</div>');
-                  $(".card").prepend('<img src=' + data[i].photo_url + '>');
+                for (i = 0; i < data.length; i++) {
+                    $("hr").prepend('<div class="card">' + data[i].name + '<img src=' + data[i].photo_url + '>' + '</div>');
+                    $(data[i].name).addClass("cardName");
                 }
             }
+
+            $(document).on("click", "button", function() {
+                var name = document.getElementById('name').value;
+                var photo = document.getElementById('photo').value;
+                if (photo === "") {
+                    photo = "img/default.png";
+                } else {
+                    photo = photo;
+                }
+                console.log("this works");
+                $("hr").prepend('<div class="card">' + name + '<img src=' + photo + '>' + '</div>');
+                return false;
+            });
+
             display();
         </script>
     </div>

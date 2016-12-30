@@ -8,7 +8,7 @@ body {
 }
 
 #main-content {
-    width: 705px;
+    width: 817px;
     padding: 25px;
     margin: 30px auto;
     border: 1px solid #d3d3d3;
@@ -52,15 +52,30 @@ form button {
 
 /* Card font: 13px and #333333 */
 
+
+/* Put your styles here */
+
 .card {
     font-size: 13px;
     color: #333333;
     height: auto;
-    width: auto;
+    width: 31%;
     border: solid 1px #9a9a9a;
-    margin: 25px;
     float: left;
+    margin-top: 5px;
+    word-wrap: normal;
+    margin-right: 5px;
+    margin-left: 11px;
 }
 
+.name {
+    margin: -73px 5px 0px 117px;
+}
 
-/* Put your styles here */
+img {
+    height: 104px;
+    width: 104px;
+    float: left;
+    border-right: solid 1px #9a9a9a;
+    padding: 5px;
+}
