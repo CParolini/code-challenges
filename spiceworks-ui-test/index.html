@@ -54,12 +54,11 @@
                 photo_url: "img/avatars/arnold.png"
             }];
 
-            function display() {
+            $(document).ready(function() {
                 for (i = 0; i < data.length; i++) {
-                    $("hr").prepend('<div class="card">' + data[i].name + '<img src=' + data[i].photo_url + '>' + '</div>');
-                    $(data[i].name).addClass("cardName");
+                    $("hr").prepend('<div class="card">' + '<p class="nameText">' + data[i].name + '</p>' + '<img src=' + data[i].photo_url + '>' + '</div>');
                 }
-            }
+            });
 
             $(document).on("click", "button", function() {
                 var name = document.getElementById('name').value;
@@ -70,11 +69,20 @@
                     photo = photo;
                 }
                 console.log("this works");
-                $("hr").prepend('<div class="card">' + name + '<img src=' + photo + '>' + '</div>');
-                return false;
+                $("hr").prepend('<div class="card">' + '<p class="nameText">' + name + '</p>' + '<img src=' + photo + '>' + '</div>');
             });
 
-            display();
+            $(document).on("click", ".hover", function() {
+                console.log("click");
+                $(".card").empty();
+            });
+
+            $(document).ready(function() {
+                $(".card").hover(function() {
+                    $(".hoverX").html('<div class="hover">' + '<img src=' + 'img/close.png' + '>' + '</div>');
+                    return false;
+                });
+            });
         </script>
     </div>
 </body>
